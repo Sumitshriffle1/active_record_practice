@@ -5,8 +5,13 @@ class TheatorsController < ApplicationController
   end
 
   def show
-    theator =Theator.find(1)
+    theator =Theator.find(7)
     render json: url_for(theator.image)
+  end
+
+  def download
+    theator = Theator.find(3).image.download
+    render json: theator
   end
 
   private
